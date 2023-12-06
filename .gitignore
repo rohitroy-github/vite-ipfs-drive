@@ -1,0 +1,48 @@
+# Ignore node_modules directory
+node_modules/
+
+# Ignore build output
+/dist/
+
+# Ignore Hardhat artifacts
+artifacts/
+cache/
+
+# Ignore Vite build artifacts
+/.vite/
+
+# Ignore environment-specific files
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Ignore logs and debugging files
+*.log
+*.log.*
+npm-debug.log*
+
+# Ignore Visual Studio Code directory
+.vscode/
+
+# Ignore macOS system files
+.DS_Store
+
+# Ignore JetBrains IDE directories
+.idea/
+
+# Ignore TypeScript configuration file
+tsconfig.tsbuildinfo
+
+# Ignore Yarn lock file
+yarn.lock
+
+# Ignore environment files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Rohit's files
+readMeRohit
