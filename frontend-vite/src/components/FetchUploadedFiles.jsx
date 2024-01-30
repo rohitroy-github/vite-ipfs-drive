@@ -2,6 +2,7 @@ import React, {useEffect, useState} from "react";
 import useSigner from "../context-state/metamask-signer";
 import {ethers} from "ethers";
 import {shortenMetamaskAddress} from "../utils/index";
+import {Link} from "react-router-dom";
 
 const FetchUploadedFiles = () => {
   const {address, contract, signer} = useSigner();
@@ -53,21 +54,37 @@ const FetchUploadedFiles = () => {
 
   return (
     <div className="flex flex-col items-center justify-center font-montserrat p-8 h-[80vh]">
-      <div className="flex w-full">
+      <div className="flex w-full h-full justify-center">
         {/* leftSection */}
-        <div className="w-3/4 p-5 items-center flex">
+        <div className="w-3/4 p-5 flex flex-wrap items-start justify-center">
           {/* Image Gallery Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-            {fileArray.map((imageUrl, index) => (
-              <div key={index} className="overflow-hidden rounded-md shadow-md">
-                <img
-                  src={imageUrl}
-                  alt={`Uploaded File ${index + 1}`}
-                  className="w-full h-48 object-cover object-center"
-                />
-              </div>
-            ))}
-          </div>
+          {fileArray.length > 0 ? (
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+              {fileArray.map((imageUrl, index) => (
+                <div
+                  key={index}
+                  className="overflow-hidden rounded-md shadow-md transition-transform transform hover:scale-105"
+                >
+                  <img
+                    src={imageUrl}
+                    alt={`Uploaded File ${index + 1}`}
+                    className="w-full h-48 object-cover object-center"
+                  />
+                </div>
+              ))}
+            </div>
+          ) : (
+            <div className="text-center">
+              <p className="pb-5">You haven't uploaded any files yet.</p>
+              {/* Use Link for navigation */}
+              <Link
+                to="/upload-file"
+                className="bg-gray-200 text-black px-4 py-2 rounded-md"
+              >
+                Upload Your First File
+              </Link>
+            </div>
+          )}
         </div>
 
         {/* rightSection */}

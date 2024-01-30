@@ -82,7 +82,7 @@ const FileUploadPage = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center font-montserrat p-8">
+    <div className="flex flex-col items-center justify-center font-montserrat p-8 h-[80vh]">
       {/* Row format: Left and Right sections */}
       <div className="flex w-full">
         {/* Left section with file upload form */}
