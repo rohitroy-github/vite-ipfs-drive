@@ -1,6 +1,6 @@
-<h2>IPFS Drive | Google drive clone (EVM Based)</h2>
+<h2>IPFS Drive (EVM Based)</h2>
 
-<b>This is a decentralized version of Amazon.in powered by blockchain and designed using Vite JS.</b>
+<b>This is a decentralized version of Google Drive for storing photos powered by blockchain and designed using Vite JS & Tailwind CSS</b>
 
 <!-- Currently, the app is working on localhost using <b>Sepolia test network</b> and Alchemy. -->
 
@@ -16,6 +16,7 @@
 
 <ul>
     <li>Vite JS</li>
+    <li>Tailwind CSS</li>
 </ul>
 <b>Backend :</b>
 <ul>
