@@ -1,6 +1,6 @@
 <h2>IPFS Drive (EVM Based)</h2>
 
-<b>This is a decentralized version of Google Drive for storing photos powered by blockchain and designed using Vite JS & Tailwind CSS</b>
+<b>This is a decentralized version of Google Drive for storing photos powered by Blockchain & IPFS.</b>
 
 <!-- Currently, the app is working on localhost using <b>Sepolia test network</b> and Alchemy. -->
 
@@ -31,6 +31,7 @@
     <li>Metamask Wallet</li>
     <li>Ethers JS</li>
     <li>Alchemy</li>
+    <li><a href="https://www.pinata.cloud/">Pinata IPFS</a></li>
 </ul>
 
 The project is complete but I'm open to modificatications.
