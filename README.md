@@ -6,9 +6,7 @@
 
 <b>Snapshots from the project : </b>
 
-![c-1](https://github.com/rohitroy-github/vite-amazon-clone-dapp/assets/68563695/9888a8ea-2826-4a8b-b5e7-47fdd3af2385)
-
-![c-2](https://github.com/rohitroy-github/vite-amazon-clone-dapp/assets/68563695/dd8d5b35-412a-43e6-9f50-d8395f6eff49)
+![ipfs-project-1](https://github.com/rohitroy-github/vite-ipfs-drive-dapp/assets/68563695/2506a12c-b755-4d86-b8ea-ba79020cee1d)
 
 <b>Tech Stack :</b>
 
