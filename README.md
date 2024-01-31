@@ -13,8 +13,7 @@
 <ul>
     <li>Uploading pictures</li>
     <li>Storing pictures into IPFS</li>
-    <li>Transfering user access for the files to other users (web3 wallets)</li>
-
+    <li>Sharing user access for the files to others (web3 wallets)</li>
 </ul>
 
 <b>Tech Stack :</b>
