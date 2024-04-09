@@ -1,18 +1,16 @@
 import React, {useEffect, useState} from "react";
 import useSigner from "../context-state/metamask-signer";
-import {ethers} from "ethers";
 import {shortenMetamaskAddress} from "../utils/index";
 import {Link} from "react-router-dom";
 
 const FetchUploadedFiles = () => {
-  const {address, contract, signer} = useSigner();
+  const {address, contract, signer, loading} = useSigner();
   const [fileArray, setFileArray] = useState([]);
   const [sharedAccess, setSharedAccess] = useState("");
   const [sharedUsers, setSharedUsers] = useState([]);
 
   const handleShareAccess = async () => {
     try {
-      // Call your contract function to share access
       const transaction = await contract.connect(signer).allow(sharedAccess);
       await transaction.wait();
       console.log("Sharing access:", sharedAccess);
@@ -21,36 +19,32 @@ const FetchUploadedFiles = () => {
     }
   };
 
-  useEffect(() => {
-    const getData = async () => {
-      try {
-        const files = await contract.connect(signer).display(address);
+  const getData = async () => {
+    try {
+      if (loading === false && contract !== null) {
+        const files = await contract.connect(signer).viewStoredURLs(address);
         setFileArray(files);
-        // console.log(files);
-      } catch (error) {
-        console.error("Error fetching uploaded files:", error);
       }
-    };
+    } catch (error) {
+      console.error("Error fetching uploaded files:", error);
+    }
+  };
 
-    // Call getData on component load
-    getData();
-  }, [address]);
-
-  useEffect(() => {
-    const getSharedUsers = async () => {
-      try {
-        // Call your contract function to get shared users
+  const getSharedUsers = async () => {
+    try {
+      if (loading === false && contract !== null) {
         const users = await contract.connect(signer).shareAccess();
         setSharedUsers(users);
-        // console.log(users);
-      } catch (error) {
-        console.error("Error fetching shared users:", error);
       }
-    };
+    } catch (error) {
+      console.error("Error fetching shared users:", error);
+    }
+  };
 
-    // Call getSharedUsers when sharedAccess or address changes
+  useEffect(() => {
+    getData();
     getSharedUsers();
-  }, [address, sharedAccess]);
+  }, [address, contract, loading, signer]);
 
   return (
     <div className="flex flex-col items-center justify-center font-montserrat p-8 h-[80vh]">

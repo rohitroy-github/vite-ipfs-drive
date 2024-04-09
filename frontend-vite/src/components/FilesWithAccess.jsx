@@ -10,14 +10,14 @@ const FilesWithAccess = () => {
 
   const fetchImages = async () => {
     try {
-      const files = await contract.connect(signer).display(address);
+      const files = await contract.connect(signer).viewStoredURLs(address);
       setFileArray(files);
       setError(null); // Clear any previous errors
     } catch (error) {
       //   console.log(error.error.data.message);
       if (
         error.error.data.message ===
-        "Error: VM Exception while processing transaction: reverted with reason string 'You don't have access !'"
+        "Error: VM Exception while processing transaction: reverted with reason string 'Not authorized by owner drive owner !'"
       ) {
         setError(
           "You don't have the permission to view these files. Ask the owner to grant you the access."

@@ -55,9 +55,7 @@ const FileUploadPage = () => {
         setSelectedFile(null);
         setImagePreview(null);
 
-        const transaction = await contract
-          .connect(signer)
-          .add(address, IMG_IPFS_URL);
+        const transaction = await contract.connect(signer).addURL(IMG_IPFS_URL);
 
         await transaction.wait();
 

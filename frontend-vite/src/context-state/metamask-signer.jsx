@@ -1,6 +1,6 @@
 import {useState, useEffect, useContext, createContext} from "react";
 import {ethers} from "ethers";
-import Upload from "../../../backend-hardhat/artifacts/contracts/Upload.sol/Upload.json";
+import Upload from "../../../backend-hardhat/artifacts/contracts/IPFSDriveContract_Main.sol/IPFSDriveContract_Main.json";
 
 const SignerContext = createContext();
 
@@ -61,6 +61,14 @@ export const SignerProvider = ({children}) => {
     };
 
     checkConnection();
+
+    window.ethereum.on("accountsChanged", async (newAccounts) => {
+      await checkConnection();
+    });
+
+    return () => {
+      window.ethereum.removeListener("accountsChanged", connectWallet);
+    };
   }, []);
 
   const contextValue = {

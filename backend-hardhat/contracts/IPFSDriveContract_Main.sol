@@ -1,23 +1,39 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-contract Upload {
+contract IPFSDriveContract_Main {
+    address public contractOwner;
+    string public contractName;
+
     struct Access {
         address user;
         bool access;
     }
 
-    mapping(address => string[]) value;
-    mapping(address => mapping(address => bool)) ownership;
+    mapping(address => string[]) mapping_userURLs;
+    mapping(address => mapping(address => bool)) mapping_ownership;
     mapping(address => Access[]) accessList;
     mapping(address => mapping(address => bool)) previousData;
 
-    function add(address _user, string calldata url) external {
-        value[_user].push(url);
+    constructor() {
+        contractName = "IPFSDriveContract_Main";
+        contractOwner = msg.sender;
+    }
+
+    modifier onlyOwnerAuthorized(address _user) {
+        require(
+            _user == msg.sender || mapping_ownership[_user][msg.sender],
+            "Not authorized by owner drive owner !"
+        );
+        _;
+    }
+
+    function addURL(string calldata url) external {
+        mapping_userURLs[msg.sender].push(url);
     }
 
     function allow(address user) external {
-        ownership[msg.sender][user] = true;
+        mapping_ownership[msg.sender][user] = true;
         if (previousData[msg.sender][user] == true) {
             for (uint i = 0; i < accessList[msg.sender].length; i++) {
                 if (accessList[msg.sender][i].user == user) {
@@ -31,7 +47,7 @@ contract Upload {
     }
 
     function disallow(address user) external {
-        ownership[msg.sender][user] = false;
+        mapping_ownership[msg.sender][user] = false;
         for (uint i = 0; i < accessList[msg.sender].length; i++) {
             if (accessList[msg.sender][i].user == user) {
                 accessList[msg.sender][i].access = true;
@@ -39,13 +55,10 @@ contract Upload {
         }
     }
 
-    function display(address _user) external view returns (string[] memory) {
-        require(
-            _user == msg.sender || ownership[_user][msg.sender],
-            "You don't have access !"
-        );
-
-        return value[_user];
+    function viewStoredURLs(
+        address _user
+    ) external view onlyOwnerAuthorized(_user) returns (string[] memory) {
+        return mapping_userURLs[_user];
     }
 
     function shareAccess() public view returns (Access[] memory) {
