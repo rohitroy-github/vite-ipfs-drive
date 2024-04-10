@@ -6,18 +6,18 @@ Currently, the app is working on localhost using <b>Sepolia</b> test network and
 
 <h3><b>Snapshots from the project :</b></h3>
 
-<img src="./project-assets/screenshot-1.png" width="750">
+<img src="./project-assets/screenshot-1.png" width="650">
 
-<img src="./project-assets/screenshot-2.png" width="750">
+<img src="./project-assets/screenshot-2.png" width="650">
 
-<img src="./project-assets/screenshot-3.png" width="750">
+<img src="./project-assets/screenshot-3.png" width="650">
 
 <h3><b>Project Features :</b></h3>
 
 <ul>
     <li>Uploading pictures</li>
-    <li>Storing pictures into IPFS</li>
-    <li>Sharing user access for the files to others (web3 wallets)</li>
+    <li>Storing pictures to IPFS</li>
+    <li>Sharing drive access for the files to other Web3 users (Wallets)</li>
 </ul>
 
 <h3><b>Tech Stack :</b></h3>
