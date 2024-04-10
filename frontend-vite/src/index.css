@@ -16,3 +16,15 @@ body {
     padding-left: 35px;
   }
 }
+
+#fileInput {
+  border: 2px solid #ccc;
+  background-color: #f9f9f9;
+  padding: 15px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#file-upload-button {
+  color: #c42727;
+}

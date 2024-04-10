@@ -84,24 +84,39 @@ const FileUploadPage = () => {
       {/* Row format: Left and Right sections */}
       <div className="flex w-full">
         {/* Left section with file upload form */}
-        <div className="w-1/2 p-5 items-center flex">
-          <form className="flex flex-col items-center">
-            <label htmlFor="fileInput" className="mb-2 text-gray-600">
-              Select an image file:
+        <div className="w-[40%] p-5 items-center flex flex-col justify-center">
+          <form className="flex flex-col text-sm w-[85%] items-center">
+            <label htmlFor="fileInput" className="mb-4 text-gray-600">
+              Select the image you wanna upload to your drive
             </label>
-            <input
-              type="file"
-              id="fileInput"
-              accept="image/*"
-              onChange={handleFileChange}
-              className="mb-4"
-            />
+
+            {/* customizedHTMLFileInputSystem */}
+            <div className="w-full mb-4">
+              <input
+                type="file"
+                id="fileInput"
+                accept="image/*"
+                onChange={handleFileChange}
+                className="hidden"
+              />
+              <label htmlFor="fileInput" className="flex">
+                <span
+                  id="file-name"
+                  className="flex bg-purple-100 w-2/3 rounded-l-md text-sm text-center items-center justify-center"
+                >
+                  {fileName}
+                </span>
+                <span className="bg-purple-500 hover:bg-purple-300 text-white font-montserrat py-2 px-4 text-sm w-1/3 rounded-r-md text-center">
+                  Select File
+                </span>
+              </label>
+            </div>
 
             {/* Upload button */}
             <button
               type="button"
               onClick={handleUpload}
-              className="btn_theme px-4 py-2 rounded-md"
+              className="bg-purple-500 hover:bg-purple-300 text-white font-montserrat py-2 px-4 rounded-md text-sm"
             >
               Upload Image
             </button>
@@ -109,19 +124,19 @@ const FileUploadPage = () => {
         </div>
 
         {/* Right section with image preview */}
-        <div className="w-1/2 items-center justify-center flex">
+        <div className="w-[60%] items-center justify-center flex">
           <div className="flex rounded-md items-center justify-center">
             {imagePreview ? (
               <img
                 src={imagePreview}
                 alt="Image Preview"
-                className="md:w-[90%] 3xl:w-[85%] h-auto object-center p-10 bg-purple-300 rounded-md"
+                className="md:w-[80%] 3xl:w-[75%] h-auto object-center p-10 bg-purple-300 rounded-md"
               />
             ) : (
               <img
                 src={"/assets/dummy-image.jpg"}
                 alt="Image Preview"
-                className="md:w-[70%] 3xl:w-[60%] h-auto object-center p-10 bg-purple-300 rounded-md"
+                className="md:w-[60%] 3xl:w-[60%] h-auto object-center p-10 bg-purple-300 rounded-md"
               />
             )}
           </div>
