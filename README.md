@@ -1,4 +1,4 @@
-<h2>IPFS Drive (EVM Based)</h2>
+<h2>IPFS Drive 1.0 (EVM Based)</h2>
 
 <b>This is a decentralized version of Google Drive for storing photos powered by Blockchain & IPFS.</b>
 
