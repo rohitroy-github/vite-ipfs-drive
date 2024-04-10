@@ -1,6 +1,7 @@
 import {useState, useEffect, useContext, createContext} from "react";
 import {ethers} from "ethers";
-import Upload from "../../../backend-hardhat/artifacts/contracts/IPFSDriveContract_Main.sol/IPFSDriveContract_Main.json";
+import {abi} from "../../../backend-hardhat/artifacts/contracts/IPFSDriveContract_Main.sol/IPFSDriveContract_Main.json";
+import config from "../backend-config.json";
 
 const SignerContext = createContext();
 
@@ -18,25 +19,25 @@ export const SignerProvider = ({children}) => {
       setLoading(true);
       if (window.ethereum) {
         await window.ethereum.request({method: "eth_requestAccounts"});
-        const provider = new ethers.providers.Web3Provider(window.ethereum);
-        const connectedSigner = provider.getSigner();
-        const connectedAddress = await connectedSigner.getAddress();
+        const getProvider = new ethers.providers.Web3Provider(window.ethereum);
+        const getSigner = await getProvider.getSigner();
+        const connectedAddress = await getSigner.getAddress();
+        const connectedNetwork = await getProvider.getNetwork();
+        const getContractAddress =
+          config[connectedNetwork.chainId].contract.address;
+        const getContract = new ethers.Contract(
+          getContractAddress,
+          abi,
+          getSigner
+        );
 
-        setProvider(provider);
-        setSigner(connectedSigner);
+        setProvider(getProvider);
+        setSigner(getSigner);
         setAddress(connectedAddress);
+        setContract(getContract);
       } else {
         console.error("Metamask is not installed or not available");
       }
-
-      const CONTRACT_ADDRESS = `${import.meta.env.VITE_CONTRACT_ADDRESS}`;
-      const contractAbi = Upload.abi;
-      const yourContract = new ethers.Contract(
-        CONTRACT_ADDRESS,
-        contractAbi,
-        signer
-      );
-      setContract(yourContract);
     } catch (error) {
       console.error("Error connecting wallet:", error);
     } finally {

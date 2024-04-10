@@ -101,7 +101,7 @@ const FileUploadPage = () => {
             <button
               type="button"
               onClick={handleUpload}
-              className="bg-blue-500 text-white px-4 py-2 rounded-md"
+              className="btn_theme px-4 py-2 rounded-md"
             >
               Upload Image
             </button>
@@ -109,13 +109,21 @@ const FileUploadPage = () => {
         </div>
 
         {/* Right section with image preview */}
-        <div className="w-1/2 p-5 items-center flex ">
-          <div className="overflow-hidden rounded-md items-center flex w-full">
-            <img
-              src={imagePreview || "/assets/dummy-image.jpg"}
-              alt="Image Preview"
-              className="w-full h-auto object-center m-5"
-            />
+        <div className="w-1/2 items-center justify-center flex">
+          <div className="flex rounded-md items-center justify-center">
+            {imagePreview ? (
+              <img
+                src={imagePreview}
+                alt="Image Preview"
+                className="md:w-[90%] 3xl:w-[85%] h-auto object-center p-10 bg-purple-300 rounded-md"
+              />
+            ) : (
+              <img
+                src={"/assets/dummy-image.jpg"}
+                alt="Image Preview"
+                className="md:w-[70%] 3xl:w-[60%] h-auto object-center p-10 bg-purple-300 rounded-md"
+              />
+            )}
           </div>
         </div>
       </div>

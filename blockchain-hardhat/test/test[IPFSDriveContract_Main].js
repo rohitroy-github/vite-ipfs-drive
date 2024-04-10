@@ -80,12 +80,12 @@ describe("IPFSDriveContract_Main", function () {
 
     user2URLs = await contract.connect(user1).viewStoredURLs(user2.address);
 
-    assert.equal(user2URLs.length, 1, "Not authorized by owner drive owner !");
+    assert.equal(user2URLs.length, 1, "Non authorized user.");
     assert.equal(user2URLs[0], "test.com", "URL value is incorrect for user1");
 
     await expect(
       contract.connect(user3).viewStoredURLs(user2.address)
-    ).to.be.revertedWith("Not authorized by owner drive owner !");
+    ).to.be.revertedWith("Non authorized user.");
   });
 
   it("Should handle access correctly after revoking access", async function () {
@@ -96,6 +96,6 @@ describe("IPFSDriveContract_Main", function () {
 
     await expect(
       contract.connect(user2).viewStoredURLs(user1.address)
-    ).to.be.revertedWith("Not authorized by owner drive owner !");
+    ).to.be.revertedWith("Non authorized user.");
   });
 });

@@ -7,36 +7,40 @@ const Navbar = () => {
   const isMetaMaskConnected = !!address;
 
   return (
-    <nav className="bg-white text-black h-[10vh] flex items-center justify-between px-6 py-3 font-montserrat border-b border-gray-200">
-      {/* Left side with nav items */}
-      <div className="flex space-x-6">
-        <NavItem to="/">Home</NavItem>
-        <NavItem to="/my-files">My Images</NavItem>
-        <NavItem to="/upload-file">Upload New Image</NavItem>
-        <NavItem to="/access-files">Access Images</NavItem>
-      </div>
+    <nav className="flex bg-white w-full border-b border-purple-500 md:px-10 md:py-5 justify-center items-center">
+      <div className="flex justify-between items-center xs:h-[7vh] md:h-auto w-full font-montserrat">
+        <div className="hover:text-gray-300 cursor-pointer text-lg text-purple-500">
+          <Link to="/">IPFS Drive</Link>
+        </div>
+        {/* Left side with nav items */}
+        <div className="flex space-x-6">
+          <NavItem to="/my-files">My Images</NavItem>
+          <NavItem to="/upload-file">Upload New Image</NavItem>
+          <NavItem to="/access-files">Access Images</NavItem>
+        </div>
 
-      {/* Right side with MetaMask connection status */}
-      <div>
-        {isMetaMaskConnected ? (
-          <button className="bg-gray-200 text-black px-4 py-2 rounded-md">
-            Metamask Connected
-          </button>
-        ) : (
-          <button
-            className="bg-gray-200 text-black px-4 py-2 rounded-md"
-            onClick={connectWallet}
-          >
-            Connect Metamask
-          </button>
-        )}
+        {/* Right side with MetaMask connection status */}
+        <div>
+          {isMetaMaskConnected ? (
+            <button className="bg-purple-500 hover:bg-purple-300 text-white font-montserrat py-2 px-4 rounded-md text-sm">
+              Metamask Connected
+            </button>
+          ) : (
+            <button
+              className="bg-purple-500 hover:bg-purple-300 text-white font-montserrat py-2 px-4 rounded-md text-sm"
+              onClick={connectWallet}
+            >
+              Connect Metamask
+            </button>
+          )}
+        </div>
       </div>
     </nav>
   );
 };
 
 const NavItem = ({to, children}) => (
-  <Link to={to} className="text-md hover:text-gray-300 cursor-pointer">
+  <Link to={to} className="text-sm hover:text-gray-300 cursor-pointer">
     {children}
   </Link>
 );

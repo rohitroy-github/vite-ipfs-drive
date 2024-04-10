@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.0;
+pragma solidity ^0.8.20;
 
 contract IPFSDriveContract_Main {
     address public contractOwner;
@@ -23,7 +23,7 @@ contract IPFSDriveContract_Main {
     modifier onlyOwnerAuthorized(address _user) {
         require(
             _user == msg.sender || mapping_ownership[_user][msg.sender],
-            "Not authorized by owner drive owner !"
+            "Non authorized user."
         );
         _;
     }

@@ -73,7 +73,7 @@ const FetchUploadedFiles = () => {
               {/* Use Link for navigation */}
               <Link
                 to="/upload-file"
-                className="bg-gray-200 text-black px-4 py-2 rounded-md"
+                className="btn_theme px-4 py-2 rounded-md"
               >
                 Upload Your First File
               </Link>
@@ -92,7 +92,7 @@ const FetchUploadedFiles = () => {
           />
           <button
             onClick={handleShareAccess}
-            className="bg-gray-200 text-black px-4 py-2 rounded-md"
+            className="btn_theme px-4 py-2 rounded-md"
           >
             Share Access
           </button>

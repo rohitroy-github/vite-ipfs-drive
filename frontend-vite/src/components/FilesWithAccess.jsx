@@ -11,37 +11,45 @@ const FilesWithAccess = () => {
   const fetchImages = async () => {
     try {
       const files = await contract.connect(signer).viewStoredURLs(address);
-      setFileArray(files);
-      setError(null); // Clear any previous errors
+
+      if (files) {
+        setFileArray(files);
+        setError(null);
+      }
     } catch (error) {
-      //   console.log(error.error.data.message);
       if (
         error.error.data.message ===
-        "Error: VM Exception while processing transaction: reverted with reason string 'Not authorized by owner drive owner !'"
+        "Error: VM Exception while processing transaction: reverted with reason string 'Non authorized user.'"
       ) {
         setError(
-          "You don't have the permission to view these files. Ask the owner to grant you the access."
+          "Sorry, you don't have the permissions to view these files. You can ask the owner to grant you the access."
         );
       } else {
-        setError("An error occurred while fetching files.");
+        setError(
+          "Some error occurred while fetching files. Please try again later."
+        );
       }
     }
   };
 
+  useEffect(() => {
+    setFileArray([]);
+  }, [signer]);
+
   return (
     <div className="flex flex-col items-center justify-center font-montserrat p-8 h-[80vh]">
       {/* Input for Address */}
-      <div className="flex flex-col mb-5 items-center w-full">
+      <div className="flex flex-col mb-5 items-center w-full text-sm">
         <input
           type="text"
           value={address}
           onChange={(e) => setAddress(e.target.value)}
           placeholder="Enter wallet address here (0x...)"
-          className="mb-2 p-3 rounded-md border border-gray-300 w-1/2 text-center"
+          className="mb-2 p-3 rounded-md border border-purple-500 w-1/2 text-center"
         />
         <button
           onClick={fetchImages}
-          className="bg-gray-200 text-black px-4 py-2 rounded-md"
+          className="bg-purple-500 hover:bg-purple-300 text-white font-montserrat py-2 px-4 rounded-md text-sm"
         >
           Search Images
         </button>

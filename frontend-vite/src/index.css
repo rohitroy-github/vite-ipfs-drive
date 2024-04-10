@@ -3,3 +3,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  padding-right: 100px;
+  padding-left: 100px;
+  margin: 0;
+}
+
+@media screen and (min-width: 350px) and (max-width: 640px) {
+  body {
+    padding-right: 35px;
+    padding-left: 35px;
+  }
+}

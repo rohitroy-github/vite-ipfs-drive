@@ -2,11 +2,11 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <div className="bg-white text-black h-[10vh] flex items-center w-full px-6 py-3 font-montserrat border-t border-gray-200">
-      <div className="flex w-full justify-center">
-        IPFS Drive 1.0 | Rohit Roy | Source Code | 2023
+    <footer className="flex bg-white border-t border-purple-500 md:py-4 items-center justify-center p-0 bottom-0 w-full font-montserrat text-xs">
+      <div className="flex items-center justify-center w-full">
+        IPFS Drive 1.0 | Rohit Roy | Github | 2023
       </div>
-    </div>
+    </footer>
   );
 };
 

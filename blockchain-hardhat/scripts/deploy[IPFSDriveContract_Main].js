@@ -12,6 +12,7 @@ async function main() {
   console.log(`Contract name: ${await ipfsDriveContract.contractName()}`);
   console.log(`Contract owner: ${await ipfsDriveContract.contractOwner()}`);
   console.log(`Contract address: ${ipfsDriveContract.address}`);
+  console.log(`Deployment chainID: [ ${network.config.chainId} ]`);
 
   if (network.config.chainId === 11155111) {
     console.log(
@@ -21,7 +22,7 @@ async function main() {
     await ipfsDriveContract.deployTransaction.wait(6);
     await verify(ipfsDriveContract.address, []);
   } else if (network.config.chainId === 31337) {
-    console.log("Deployment network: Hardhat local environment \u2705");
+    console.log(`Deployment network: Localhost [ Hardhat ]`);
   }
 }
 
