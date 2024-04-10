@@ -6,7 +6,11 @@ Currently, the app is working on localhost using <b>Sepolia</b> test network and
 
 <h3><b>Snapshots from the project :</b></h3>
 
-![ipfs-project-1](https://github.com/rohitroy-github/vite-ipfs-drive-dapp/assets/68563695/2506a12c-b755-4d86-b8ea-ba79020cee1d)
+<img src="./project-assets/screenshot-1.png" width="750">
+
+<img src="./project-assets/screenshot-2.png" width="750">
+
+<img src="./project-assets/screenshot-3.png" width="750">
 
 <h3><b>Project Features :</b></h3>
 
