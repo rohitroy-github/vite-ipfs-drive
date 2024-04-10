@@ -1,12 +1,11 @@
 import React from "react";
 import {Routes, Route} from "react-router-dom";
 
-import FileUpload from "./components/FileUpload";
-import FetchUploadedFiles from "./components/FetchUploadedFiles";
-
 import Navbar from "./components/Navbar";
 import Home from "./components/Home";
 import Footer from "./components/Footer";
+import FileUpload from "./components/FileUpload";
+import FetchUploadedFiles from "./components/FetchUploadedFiles";
 import FilesWithAccess from "./components/FilesWithAccess";
 
 const App = () => {

@@ -4,7 +4,6 @@ import axios from "axios";
 import {ToastContainer, toast} from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import useSigner from "../context-state/metamask-signer";
-import {ethers} from "ethers";
 
 const FileUploadPage = () => {
   const {address, contract, signer} = useSigner();
