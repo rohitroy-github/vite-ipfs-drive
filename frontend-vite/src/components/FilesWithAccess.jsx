@@ -39,7 +39,7 @@ const FilesWithAccess = () => {
   return (
     <div className="flex flex-col items-center justify-center font-montserrat p-8 h-[80vh]">
       {/* Input for Address */}
-      <div className="flex flex-col mb-5 items-center w-full text-sm">
+      <div className="flex flex-col mb-10 items-center w-full text-sm">
         <input
           type="text"
           value={address}
@@ -51,21 +51,21 @@ const FilesWithAccess = () => {
           onClick={fetchImages}
           className="bg-purple-500 hover:bg-purple-300 text-white font-montserrat py-2 px-4 rounded-md text-sm"
         >
-          Search Images
+          Search For Images
         </button>
       </div>
 
       {error && <div className="text-black font-montserrat mb-4">{error}</div>}
 
       {/* Image Gallery Grid */}
-      <div className="w-fullp-5 items-center flex">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      <div className="w-[90%] p-5 items-center flex">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
           {fileArray.map((imageUrl, index) => (
             <div key={index} className="overflow-hidden rounded-md shadow-md">
               <img
                 src={imageUrl}
                 alt={`Uploaded File ${index + 1}`}
-                className="w-full h-48 object-cover object-center"
+                className="w-full h-32 object-cover"
               />
             </div>
           ))}

@@ -50,64 +50,70 @@ const FetchUploadedFiles = () => {
     <div className="flex flex-col items-center justify-center font-montserrat p-8 h-[80vh]">
       <div className="flex w-full h-full justify-center">
         {/* leftSection */}
-        <div className="w-3/4 p-5 flex flex-wrap items-start justify-center">
+        <div className="w-3/4 p-5">
           {/* Image Gallery Grid */}
           {fileArray.length > 0 ? (
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-              {fileArray.map((imageUrl, index) => (
-                <div
-                  key={index}
-                  className="overflow-hidden rounded-md shadow-md transition-transform transform hover:scale-105"
-                >
-                  <img
-                    src={imageUrl}
-                    alt={`Uploaded File ${index + 1}`}
-                    className="w-full h-48 object-cover object-center"
-                  />
-                </div>
-              ))}
+            <div className="flex items-start justify-center flex-wrap">
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                {fileArray.map((imageUrl, index) => (
+                  <div
+                    key={index}
+                    className="overflow-hidden rounded-md shadow-md transition-transform transform hover:scale-105"
+                  >
+                    <img
+                      src={imageUrl}
+                      alt={`Uploaded File ${index + 1}`}
+                      className="w-full h-30 object-cover object-center"
+                    />
+                  </div>
+                ))}
+              </div>
             </div>
           ) : (
-            <div className="text-center">
-              <p className="pb-5">You haven't uploaded any files yet.</p>
-              {/* Use Link for navigation */}
-              <Link
-                to="/upload-file"
-                className="btn_theme px-4 py-2 rounded-md"
-              >
-                Upload Your First File
-              </Link>
+            <div className="flex items-center justify-center h-full">
+              <div className="text-center">
+                <p className="pb-5">You haven't uploaded any files yet.</p>
+                {/* Use Link for navigation */}
+                <Link
+                  to="/upload-file"
+                  className="bg-purple-500 hover:bg-purple-300 text-white font-montserrat py-2 px-4 rounded-md text-sm"
+                >
+                  Upload Your First File
+                </Link>
+              </div>
             </div>
           )}
         </div>
 
         {/* rightSection */}
-        <div className="w-1/4 p-5 items-center flex flex-col border-l border-gray-300">
+        <div className="w-1/4 p-5 items-center flex flex-col border-l border-purple-500">
           <input
             type="text"
             value={sharedAccess}
             onChange={(e) => setSharedAccess(e.target.value)}
             placeholder="Enter wallet address (0x...)"
-            className="mb-2 p-3 rounded-md border border-gray-300 w-full text-center"
+            className="mb-4 p-3 rounded-md border border-purple-500 w-full text-center text-sm"
           />
           <button
             onClick={handleShareAccess}
-            className="btn_theme px-4 py-2 rounded-md"
+            className="bg-purple-500 hover:bg-purple-300 text-white font-montserrat py-2 px-4 rounded-md text-xs mb-4 "
           >
-            Share Access
+            Share Drive Access
           </button>
-          <div className="mt-5 text-center">
+          <div className="text-center">
             {sharedUsers.length > 0 ? (
               <div>
-                <p className="font-bold">Users with access.</p>
-                <ul className="list-disc pl-5">
+                <p className="text-sm">Authorized wallets</p>
+                <ul className="list-disc pl-5 text-xs">
                   {sharedUsers.map((user, index) => (
                     <li key={index}>{shortenMetamaskAddress(user[0])}</li>
                   ))}
                 </ul>
               </div>
             ) : (
-              <p>You haven't shared access with anyone yet.</p>
+              <p className="text-xs">
+                You haven't shared access with anyone yet.
+              </p>
             )}
           </div>
         </div>

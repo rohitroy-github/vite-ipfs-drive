@@ -11,12 +11,12 @@ import FilesWithAccess from "./components/FilesWithAccess";
 
 const App = () => {
   return (
-    <div className="mx-auto">
-      <div className="h-[12vh]">
+    <div className="h-screen">
+      <div className="h-[10vh]">
         <Navbar />
       </div>
 
-      <div>
+      <div className="h-[84vh]">
         <Routes>
           <Route path="/" element={<Home />}></Route>
           <Route path="/upload-file" element={<FileUpload />}></Route>
@@ -25,7 +25,7 @@ const App = () => {
         </Routes>{" "}
       </div>
 
-      <div className="">
+      <div className="h-[6vh]">
         <Footer />
       </div>
     </div>

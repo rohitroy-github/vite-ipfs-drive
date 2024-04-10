@@ -8,7 +8,7 @@ const Navbar = () => {
 
   return (
     <nav className="flex bg-white w-full border-b border-purple-500 md:px-10 md:py-5 justify-center items-center">
-      <div className="flex justify-between items-center xs:h-[7vh] md:h-auto w-full font-montserrat">
+      <div className="flex justify-between items-center w-full font-montserrat">
         <div className="hover:text-gray-300 cursor-pointer text-lg text-purple-500">
           <Link to="/">IPFS Drive</Link>
         </div>

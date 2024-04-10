@@ -3,7 +3,7 @@ export function shortenMetamaskAddress(address) {
     return "Invalid address";
   }
 
-  const trimmedAddress = address.slice(0, 10) + "...." + address.slice(-10);
+  const trimmedAddress = address.slice(0, 12) + "...." + address.slice(-12);
 
   return trimmedAddress;
 }

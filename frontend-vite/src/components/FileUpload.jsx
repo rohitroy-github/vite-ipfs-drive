@@ -51,26 +51,27 @@ const FileUploadPage = () => {
         });
         const IMG_IPFS_URL = `https://gateway.pinata.cloud/ipfs/${res.data.IpfsHash}`;
 
-        setFileName("");
-        setSelectedFile(null);
-        setImagePreview(null);
-
         const transaction = await contract.connect(signer).addURL(IMG_IPFS_URL);
 
         await transaction.wait();
 
-        toast.success("File successfully uploaded.", {
-          position: "bottom-center",
-          autoClose: 2000,
-          hideProgressBar: false,
+        // resettingToInitialValues
+        setFileName("");
+        setSelectedFile(null);
+        setImagePreview(null);
+
+        // Customization: https://fkhadra.github.io/react-toastify/how-to-style/
+        toast("File successfully uploaded to drive ✅", {
+          position: "top-right",
+          autoClose: 1500,
           closeOnClick: true,
           pauseOnHover: true,
           draggable: true,
           progress: undefined,
-          theme: "dark",
+          icon: false,
+          hideProgressBar: true,
+          closeButton: false,
         });
-
-        alert("Success");
       } catch (error) {
         console.log("Error during uploading file on IPFS", error);
       }
@@ -143,7 +144,12 @@ const FileUploadPage = () => {
         </div>
       </div>
 
-      <ToastContainer />
+      <ToastContainer
+        toastClassName={
+          "font-montserrat bg-purple-500 text-white text-center flex"
+        }
+        bodyClassName={"text-sm p-3"}
+      />
     </div>
   );
 };
