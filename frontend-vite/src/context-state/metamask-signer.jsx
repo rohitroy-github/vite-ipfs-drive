@@ -1,6 +1,6 @@
 import {useState, useEffect, useContext, createContext} from "react";
 import {ethers} from "ethers";
-import {abi} from "../../../backend-hardhat/artifacts/contracts/IPFSDriveContract_Main.sol/IPFSDriveContract_Main.json";
+import {abi} from "../../../blockchain-hardhat/artifacts/contracts/IPFSDriveContract_Main.sol/IPFSDriveContract_Main.json";
 import config from "../backend-config.json";
 
 const SignerContext = createContext();
