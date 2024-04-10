@@ -2,7 +2,7 @@
 
 <b>This is a decentralized version of Google Drive for storing photos powered by Blockchain & IPFS.</b>
 
-Currently, the app can be tested on Localhost (Hardhat) & <b>Sepolia (EVM)</b> test network using Alchemy endpoint.
+Currently, the app can be tested on <b>Localhost (Hardhat)</b> & <b>Sepolia (EVM)</b> test network using Alchemy endpoint.
 
 <h3><b>Snapshots from the project :</b></h3>
 
