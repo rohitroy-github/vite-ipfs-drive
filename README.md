@@ -58,8 +58,9 @@ Terminal 2:
 
 <ul>
     <li>Run (Move inside [blockchain-hardhat] folder) : <b>cd blockchain-hardhat</b></li>
-    <li>Run (Running tests) : <b>npx hardhat test</b></li>
-    <li>Run (Running deployment script) : <b>npx hardhat run scripts/deploy[IPFSDriveContract_Main].js --network localhost</b></li>
+    <li>[OPTIONAL] Run (Running tests) : <b>npx hardhat test</b></li>
+    <li>Run (Running deployment script for <b>Localhost</b>) : <b>npx hardhat run scripts/deploy[IPFSDriveContract_Main].js --network localhost</b></li>
+    <li>[OPTIONAL] Run (Running deployment script for <b>Sepolia</b>) : <b>npx hardhat run scripts/deploy[IPFSDriveContract_Main].js --network sepolia</b></li>
 </ul>
 
 Update the <b>[backend-config.json]</b> file inside /frontend-vite with the updated contract-address under <b>"31337"</b> "address" feild fetched from Terminal 2.
