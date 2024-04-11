@@ -51,20 +51,20 @@ Currently, the app can be tested on <b>Localhost (Hardhat)</b> & <b>Sepolia (EVM
 
 Terminal 1:
 
-<ul>
-    <li>Run (Move inside [blockchain-hardhat] folder) : <b>cd blockchain-hardhat</b></li>
-    <li>Run (Running Hardhat node locally) : <b>npx hardhat node</b></li>
+    <ul>
+        <li>Run (Move inside [blockchain-hardhat] folder) : <b>cd blockchain-hardhat</b></li>
+        <li>Run (Running Hardhat node locally) : <b>npx hardhat node</b></li>
 
-</ul>
+    </ul>
 
 Terminal 2:
 
-<ul>
-    <li>Run (Move inside [blockchain-hardhat] folder) : <b>cd blockchain-hardhat</b></li>
-    <li>[OPTIONAL] Run (Running tests) : <b>npx hardhat test</b></li>
-    <li>Run (Running deployment script for <b>Localhost</b>) : <b>npx hardhat run scripts/deploy[IPFSDriveContract_Main].js --network localhost</b></li>
-    <li>[OPTIONAL] Run (Running deployment script for <b>Sepolia</b>) : <b>npx hardhat run scripts/deploy[IPFSDriveContract_Main].js --network sepolia</b></li>
-</ul>
+    <ul>
+        <li>Run (Move inside [blockchain-hardhat] folder) : <b>cd blockchain-hardhat</b></li>
+        <li>[OPTIONAL] Run (Running tests) : <b>npx hardhat test</b></li>
+        <li>Run (Running deployment script for <b>Localhost</b>) : <b>npx hardhat run scripts/deploy[IPFSDriveContract_Main].js --network localhost</b></li>
+        <li>[OPTIONAL] Run (Running deployment script for <b>Sepolia</b>) : <b>npx hardhat run scripts/deploy[IPFSDriveContract_Main].js --network sepolia</b></li>
+    </ul>
 
 Update the <b>[backend-config.json]</b> file inside /frontend-vite with the updated contract-address under <b>"31337"</b> "address" feild fetched from Terminal 2.
 
