@@ -42,7 +42,10 @@ Currently, the app can be tested on <b>Localhost (Hardhat)</b> & <b>Sepolia (EVM
 
 <b>Environment variables :</b>
 
-Create a new .env file inside [blockchain-hardhat] folder taking reference from .env.example file inside the same.
+<ul>
+    <li>Create a new .env file inside [blockchain-hardhat] folder taking reference from .env.example file inside the same.</li>
+    <li>Create a new .env file inside [frontend-vite] folder taking reference from .env.example file inside the same.</li>
+</ul>
 
 <b>Backend :</b>
 
