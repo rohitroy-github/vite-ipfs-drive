@@ -6,9 +6,7 @@ Currently, the app can be tested on <b>Localhost (Hardhat)</b> & <b>Sepolia (EVM
 
 <h3><b>Snapshots from the project :</b></h3>
 
-<img src="./project-assets/screenshot-1.png" width="650">
-
-<img src="./project-assets/screenshot-2.png" width="650">
+<img src="./project-assets/screenshot-1.png" width="350" class="image-align-left"><img src="./project-assets/screenshot-2.png" width="350">
 
 <h3><b>Project Features :</b></h3>
 
@@ -38,7 +36,14 @@ Currently, the app can be tested on <b>Localhost (Hardhat)</b> & <b>Sepolia (EVM
     <li><a href="https://www.pinata.cloud/">Pinata IPFS</a></li>
 </ul>
 
-<h3><b>Guide for testing on local hardhat network :</b></h3>
+<h3><b>Deployed Chains :</b></h3>
+
+<ul>
+    <li>Ethereum Sepolia Testnet ✅ </li>
+    <li>Hardhat Local Testnet ✅</li>
+</ul>
+
+<h3><b>Guide for testing locally :</b></h3>
 
 <b>Environment variables :</b>
 
