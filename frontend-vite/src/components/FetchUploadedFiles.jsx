@@ -3,6 +3,23 @@ import useSigner from "../context-state/metamask-signer";
 import {shortenMetamaskAddress} from "../utils/index";
 import {Link} from "react-router-dom";
 
+import {
+  Cloud,
+  CreditCard,
+  Github,
+  Keyboard,
+  LifeBuoy,
+  LogOut,
+  Mail,
+  MessageSquare,
+  Plus,
+  PlusCircle,
+  Settings,
+  User,
+  UserPlus,
+  Users,
+} from "lucide-react";
+
 const FetchUploadedFiles = () => {
   const {address, contract, signer, loading} = useSigner();
   const [fileArray, setFileArray] = useState([]);
@@ -58,13 +75,16 @@ const FetchUploadedFiles = () => {
                 {fileArray.map((imageUrl, index) => (
                   <div
                     key={index}
-                    className="overflow-hidden rounded-md shadow-md transition-transform transform hover:scale-105"
+                    className="relative overflow-hidden rounded-md shadow-md transition-transform transform hover:scale-105"
                   >
                     <img
                       src={imageUrl}
                       alt={`Uploaded File ${index + 1}`}
                       className="w-full h-30 object-cover object-center"
                     />
+                    <button className="absolute top-2 right-2 bg-purple-500 text-white px-2 py-2 rounded-md text-xs opacity-0 transition-opacity duration-200">
+                      <Settings className="h-4 w-4" />
+                    </button>
                   </div>
                 ))}
               </div>

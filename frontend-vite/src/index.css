@@ -24,3 +24,7 @@ body {
   border-radius: 5px;
   cursor: pointer;
 }
+
+.relative:hover button {
+  opacity: 1;
+}
