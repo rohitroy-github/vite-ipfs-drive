@@ -8,12 +8,13 @@ Currently, the app can be tested on <b>Localhost (Hardhat)</b> & <b>Sepolia (EVM
 
 <img src="./project-assets/screenshot-1.png" width="350" class="image-align-left"><img src="./project-assets/screenshot-2.png" width="350">
 
-<h3><b>Project Features :</b></h3>
+<h3><b>Features :</b></h3>
 
 <ul>
     <li>Uploading pictures</li>
+    <li>Image previews</li>
     <li>Storing pictures to IPFS</li>
-    <li>Sharing drive access for the files to other Web3 users (Wallets)</li>
+    <li>Sharing drive access with user (using wallet address)</li>
 </ul>
 
 <h3><b>Tech Stack :</b></h3>
@@ -29,7 +30,7 @@ Currently, the app can be tested on <b>Localhost (Hardhat)</b> & <b>Sepolia (EVM
 
 <ul>
     <li>Node JS</li>
-    <li>Hardhat Development Environment</li>
+    <li>Hardhat</li>
     <li>Metamask Wallet</li>
     <li>Ethers JS</li>
     <li>Alchemy</li>
