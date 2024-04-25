@@ -20,6 +20,22 @@ import {
   Users,
 } from "lucide-react";
 
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuGroup,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuPortal,
+  DropdownMenuSeparator,
+  DropdownMenuShortcut,
+  DropdownMenuSub,
+  DropdownMenuSubContent,
+  DropdownMenuSubTrigger,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import FetchedUploadedImage from "./FetchedUploadedImage";
+
 const FetchUploadedFiles = () => {
   const {address, contract, signer, loading} = useSigner();
   const [fileArray, setFileArray] = useState([]);
@@ -73,19 +89,7 @@ const FetchUploadedFiles = () => {
             <div className="flex items-start justify-center flex-wrap">
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                 {fileArray.map((imageUrl, index) => (
-                  <div
-                    key={index}
-                    className="relative overflow-hidden rounded-md shadow-md transition-transform transform hover:scale-105"
-                  >
-                    <img
-                      src={imageUrl}
-                      alt={`Uploaded File ${index + 1}`}
-                      className="w-full h-30 object-cover object-center"
-                    />
-                    <button className="absolute top-2 right-2 bg-purple-500 text-white px-2 py-2 rounded-md text-xs opacity-0 transition-opacity duration-200">
-                      <Settings className="h-4 w-4" />
-                    </button>
-                  </div>
+                  <FetchedUploadedImage index={index} imageUrl={imageUrl} />
                 ))}
               </div>
             </div>

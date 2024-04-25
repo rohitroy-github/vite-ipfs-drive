@@ -7,6 +7,7 @@ import Footer from "./components/Footer";
 import FileUpload from "./components/FileUpload";
 import FetchUploadedFiles from "./components/FetchUploadedFiles";
 import FilesWithAccess from "./components/FilesWithAccess";
+import TestingPage from "./components/TestingPage";
 
 const App = () => {
   return (
@@ -21,7 +22,10 @@ const App = () => {
           <Route path="/upload-file" element={<FileUpload />}></Route>
           <Route path="/my-files" element={<FetchUploadedFiles />}></Route>
           <Route path="/access-files" element={<FilesWithAccess />}></Route>
-        </Routes>{" "}
+
+          {/* forComponentTesting */}
+          <Route path="/test" element={<TestingPage />}></Route>
+        </Routes>
       </div>
 
       <div className="h-[6vh]">
