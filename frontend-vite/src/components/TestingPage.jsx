@@ -34,7 +34,8 @@ const TestingPage = () => {
           <ContextMenuContent className="w-55">
             <ContextMenuItem className="font-montserrat text-purple-500 font-semibold">
               <Image className="mr-3 h-4 w-4" />
-              <span>View</span>
+              {/* <span>View</span> */}
+              <button>View</button>
             </ContextMenuItem>
             <ContextMenuSeparator />
 
