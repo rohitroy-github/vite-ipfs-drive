@@ -1,86 +1,95 @@
-<h2>IPFS Drive 1.0 (EVM Based)</h2>
+# IPFS Drive 1.0 (EVM-Based)
 
-<b>This is a decentralized version of Google Drive for storing photos powered by Blockchain & IPFS.</b>
+IPFS Drive 1.0 is a **decentralized alternative to Google Drive**, designed for **secure photo storage** using **Blockchain & IPFS**.
 
-Currently, the app can be tested on <b>Localhost (Hardhat)</b> & <b>Sepolia (EVM)</b> test network using Alchemy endpoint.
+Currently, the app supports testing on **Localhost (Hardhat)** and the **Ethereum Sepolia Testnet** via an Alchemy endpoint.
 
-<h3><b>Snapshots from the project :</b></h3>
+---
 
-<img src="./project-assets/screenshot-1.png" width="350" class="image-align-left"><img src="./project-assets/screenshot-2.png" width="350">
+## Snapshots
 
-<h3><b>Features :</b></h3>
+| ![image](./project-assets/screenshot-1.png) | ![image](./project-assets/screenshot-2.png) |
+| ------------------------------------------- | ------------------------------------------- |
 
-<ul>
-    <li>Uploading pictures</li>
-    <li>Image previews</li>
-    <li>Storing pictures to IPFS</li>
-    <li>Sharing drive access with user (using wallet address)</li>
-</ul>
+---
 
-<h3><b>Tech Stack :</b></h3>
+## Features
 
-<b>Frontend :</b>
+- **Upload and store pictures securely**
+- **Preview images directly within the app**
+- **Decentralized storage powered by IPFS**
+- **Share drive access using wallet addresses**
 
-<ul>
-    <li>Vite JS</li>
-    <li>Tailwind CSS</li>
-</ul>
+---
 
-<b>Backend :</b>
+## Tech Stack
 
-<ul>
-    <li>Node JS</li>
-    <li>Hardhat</li>
-    <li>Metamask Wallet</li>
-    <li>Ethers JS</li>
-    <li>Alchemy</li>
-    <li><a href="https://www.pinata.cloud/">Pinata IPFS</a></li>
-</ul>
+### Frontend:
 
-<h3><b>Deployed Chains :</b></h3>
+- **Vite JS** - Fast and modern frontend tooling
+- **Tailwind CSS** - Utility-first styling for a sleek UI
 
-<ul>
-    <li>Ethereum Sepolia Testnet ✅ </li>
-    <li>Hardhat Local Testnet ✅</li>
-</ul>
+### Backend:
 
-<h3><b>Guide for testing locally :</b></h3>
+- **Node.js** - Server-side runtime
+- **Hardhat** - Ethereum development framework
+- **Metamask Wallet** - User authentication and transactions
+- **Ethers.js** - Blockchain interaction library
+- **Alchemy** - Web3 infrastructure provider
+- [**Pinata IPFS**](https://www.pinata.cloud/) - IPFS storage solution
 
-<b>Environment variables :</b>
+---
 
-<ul>
-    <li>Create a new .env file inside [blockchain-hardhat] folder taking reference from .env.example file inside the same.</li>
-    <li>Create a new .env file inside [frontend-vite] folder taking reference from .env.example file inside the same.</li>
-</ul>
+## Deployed Networks
 
-<b>Backend :</b>
+- ✅ **Ethereum Sepolia Testnet**
+- ✅ **Hardhat Local Testnet**
 
-Terminal 1:
+---
 
-<ul>
-    <li>Run (Move inside [blockchain-hardhat] folder) : <b>cd blockchain-hardhat</b></li>
-    <li>Run (Running Hardhat node locally) : <b>npx hardhat node</b></li>
+## Setup & Testing Guide
 
-</ul>
+### Setting Up Environment Variables
 
-Terminal 2:
+- Create a `.env` file in the `blockchain-hardhat` directory, using `.env.example` as a reference.
+- Create a `.env` file in the `frontend-vite` directory, using `.env.example` as a reference.
 
-<ul>
-    <li>Run (Move inside [blockchain-hardhat] folder) : <b>cd blockchain-hardhat</b></li>
-    <li>[OPTIONAL] Run (Running tests) : <b>npx hardhat test</b></li>
-    <li>Run (Running deployment script for <b>Localhost</b>) : <b>npx hardhat run scripts/deploy[IPFSDriveContract_Main].js --network localhost</b></li>
-    <li>[OPTIONAL] Run (Running deployment script for <b>Sepolia</b>) : <b>npx hardhat run scripts/deploy[IPFSDriveContract_Main].js --network sepolia</b></li>
-</ul>
+### Backend Setup
 
-Update the <b>[backend-config.json]</b> file inside /frontend-vite with the updated contract-address under <b>"31337"</b> "address" feild fetched from Terminal 2.
+#### Terminal 1 - Start Hardhat Node:
 
-<b>Frontend :</b>
+```sh
+cd blockchain-hardhat
+npx hardhat node
+```
 
-Terminal 1:
+#### Terminal 2 - Deploy Contracts:
 
-<ul>
-    <li>Run (Move inside [frontend-vite] folder) : <b>cd frontend-vite</b></li>
-    <li>Run (Running frontend on browser): <b>npm run dev</b></li>
-</ul>
+```sh
+cd blockchain-hardhat
+# OPTIONAL: Run tests
+npx hardhat test
+# Deploy contract to Localhost
+npx hardhat run scripts/deploy[IPFSDriveContract_Main].js --network localhost
+# OPTIONAL: Deploy contract to Sepolia
+npx hardhat run scripts/deploy[IPFSDriveContract_Main].js --network sepolia
+```
 
-The project is complete but I'm open to suggestions & modifications for this project. Please don't forget to put a ⭐ if you're feeling generous 😊
+- Update **`backend-config.json`** inside `/frontend-vite` with the **latest contract address** under the **"31337"** key, fetched from Terminal 2.
+
+### Frontend Setup
+
+#### Terminal 1 - Start Frontend:
+
+```sh
+cd frontend-vite
+npm run dev
+```
+
+---
+
+## Contributions & Feedback
+
+The project is functional but open to enhancements. Feel free to suggest improvements or modifications.
+
+If you found this useful, don't forget to leave a ⭐! 😊

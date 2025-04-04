@@ -120,7 +120,7 @@ const FetchUploadedFiles = () => {
           />
           <button
             onClick={handleShareAccess}
-            className="bg-purple-500 hover:bg-purple-300 text-white font-montserrat py-2 px-4 rounded-md text-xs mb-4 "
+            className="bg-purple-500 hover:bg-purple-300 text-white font-montserrat py-2 px-4 rounded-md text-xs mb-4"
           >
             Share Drive Access
           </button>
